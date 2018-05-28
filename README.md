@@ -47,7 +47,7 @@ Spark configuration options table:
 
 ### Methodology
 
-![methodologyflowchart](methodologyflowchart.png)
+![methodologyflowchart](https://raw.githubusercontent.com/longwind48/criteo_click_prediction_sparkml/master/methodologyflowchart.png)
 
 ---
 
@@ -55,14 +55,14 @@ Spark configuration options table:
 
 The cluster was set up with the kind support from **Microsoft Azure Sponsorship**, that generously provided 60 cores for the expense of this project. However, building machine learning pipelines on 1.3Tb of data requires many more cores to run efficiently and manageably. The figure below was taken from Dunner et al.[24], a paper that compared the performance of logistic regression on several machine learning libraries, on the Criteo dataset.
 
-![logisticregcriteo1](logisticregcriteo.png)
+![logisticregcriteo1](https://raw.githubusercontent.com/longwind48/criteo_click_prediction_sparkml/master/logisticregcriteo.png)
 
 In the chart above, Rambler Digital Solutions[25] deployed a Spark 2.1.0 with total 512 cores and 2TB of memory, and trained Logistic Regression on 4.2 billion training instances, taking approximately 100 minutes. Google[26] trained a Logistic Regression model using Tensorflow, and reported using 60 workers and 29 parameter machines for the same data, clocking a very competitive test logloss score and training time. Dünner's paper on Snap ML, a new machine learning library that supports GPU accelerators in a distributed environment, trained a Logistic Regression model using 16 GPUs, clocking an impressive score. This comparison is a clear indication of the competitiveness and innovation of the development in scalable machine learning.
 
 ------
 
 With the 40 cores set up in this project, it was only possible to train on only a subset of the dataset. We still tried to emulate the existence of big data by working on millions of instances. The results of this project are summarised in the figure below.
-![logisticregcriteo](results.png)
+![logisticregcriteo](https://raw.githubusercontent.com/longwind48/criteo_click_prediction_sparkml/master/results.png)
 
 As expected, the number of worker nodes is held accountable for the running time of the creation of pipelines and model training, because more cores allows for a higher level of parallelism. Repartitioning time was constant throughout the benchmark test because repartitioning was executed with only one node, with zero parallelism. The accuracy and AUC scores between different data sizes were rather close, which could be explained by the similarities between datasets. Since they were sampled with the same seed, on purpose, we can observe how scalability in data affects results, which, in this case, it is clear that scalability did not yield a significant improvement in results. This is especially common when the nature of data does not 'explain' enough. When sampling, it can be easy to introduce bias by selecting a dataset that misrepresents or underrepresents the real cases, which will distort the results. To improve the quality of data, datasets should always be analyzed and preprocessed with the addition of newly engineered features that improve predictive power, as well as proper means of feature selection. The process of sampling should also be done with caution, drawing samples from multiple days could be one way to decrease the bias. 
 
