@@ -55,7 +55,7 @@ Spark configuration options table:
 
 The cluster was set up with the kind support from **Microsoft Azure Sponsorship**, that generously provided 60 cores for the expense of this project. However, building machine learning pipelines on 1.3Tb of data requires many more cores to run efficiently and manageably. The figure below was taken from Dunner et al.[24], a paper that compared the performance of logistic regression on several machine learning libraries, on the Criteo dataset.
 
-![logisticregcriteo](logisticregcriteo.png)
+![logisticregcriteo1](logisticregcriteo.png)
 
 In the chart above, Rambler Digital Solutions[25] deployed a Spark 2.1.0 with total 512 cores and 2TB of memory, and trained Logistic Regression on 4.2 billion training instances, taking approximately 100 minutes. Google[26] trained a Logistic Regression model using Tensorflow, and reported using 60 workers and 29 parameter machines for the same data, clocking a very competitive test logloss score and training time. Dünner's paper on Snap ML, a new machine learning library that supports GPU accelerators in a distributed environment, trained a Logistic Regression model using 16 GPUs, clocking an impressive score. This comparison is a clear indication of the competitiveness and innovation of the development in scalable machine learning.
 
