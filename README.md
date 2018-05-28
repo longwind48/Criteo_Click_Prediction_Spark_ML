@@ -47,7 +47,7 @@ Spark configuration options table:
 
 ### Methodology
 
-![methodologyflowchart](https://raw.githubusercontent.com/longwind48/criteo_click_prediction_sparkml/master/methodologyflowchart.png)
+![methodologyflowchart](methodologyflowchart.png)
 
 ---
 
