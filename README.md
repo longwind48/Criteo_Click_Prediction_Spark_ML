@@ -4,7 +4,7 @@
 
 ---
 
-This repository holds a report in the form of a jupyter notebook, which focused on the prediction of the click theough rate of display ads, while managing the following objectives:
+This repository holds a report in the form of a jupyter notebook, which focused on the prediction of the click through rate of display ads, while managing the following objectives:
 
 - Utilize Microsoft Azure HDInsight clusters for large-scale machine learning.
 - Briefly summarize the key concepts behind algorithms used.
