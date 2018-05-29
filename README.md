@@ -14,8 +14,6 @@ This repository holds a report in the form of a jupyter notebook, which focused 
 
 
 
-The following parts of this markdown file highlights the key results from the report. 
-
 ---
 
 ### Experimental Setup
